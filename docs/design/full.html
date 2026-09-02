@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Полная главная — тёмный индастриал</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111214; --bg2:#191b1e; --card:#1e2125; --line:#2c3036;
+  --text:#f2f3f4; --muted:#9aa1a8; --hot:#e07a1e; --hot2:#c9660f;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 'Golos Text',sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+h2,h3,.h{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.eyebrow{font:500 12.5px var(--mono);color:var(--hot);letter-spacing:.16em;text-transform:uppercase}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px}
+.sec-head h2{font-size:34px;font-weight:600;margin-top:8px}
+.sec-head .more{color:var(--hot);font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap}
+.sec-head .more::after{content:' →'}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:#111214f0;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.nav img{height:36px}
+.nav ul{display:flex;gap:26px;list-style:none;font:500 13.5px 'Golos Text';text-transform:uppercase;letter-spacing:.05em}
+.nav a{color:var(--muted);text-decoration:none}
+.nav li:first-child a{color:var(--hot)}
+.nav .cta{background:var(--hot);color:#fff;padding:11px 20px;font-weight:600;text-decoration:none;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
+.burger{display:none}
+/* hero */
+.hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/stadium.jpg) center/cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,#111214f2 0%,#111214c9 42%,#11121445 100%)}
+.hero .inner{position:relative;padding:90px 0;max-width:640px}
+.hero .kick{display:flex;align-items:center;gap:12px}
+.hero .kick::before{content:'';width:36px;height:2px;background:var(--hot)}
+.hero h1{font:700 clamp(44px,5.6vw,78px)/1.03 'Oswald';text-transform:uppercase;margin:18px 0 20px}
+.hero h1 span{color:var(--hot)}
+.hero p{font-size:17.5px;color:#c9ced3;max-width:470px}
+.hero .btns{display:flex;gap:14px;margin-top:34px}
+.btn{padding:15px 28px;font:600 13.5px 'Golos Text';letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+.btn-hot{background:var(--hot);color:#fff}
+.btn-hot:hover{background:var(--hot2)}
+.btn-line{border:1px solid #ffffff59;color:#fff}
+/* services */
+.services{background:var(--bg2);padding:76px 0}
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.svc{background:var(--card);border:1px solid var(--line);padding:26px 18px;text-align:center}
+.svc:hover{border-color:var(--hot)}
+.svc svg{width:44px;height:44px;stroke:var(--hot);fill:none;stroke-width:1.6}
+.svc .t{font:600 14.5px 'Oswald';text-transform:uppercase;letter-spacing:.04em;margin-top:14px}
+.svc .d{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+/* stats band */
+.band{background:linear-gradient(90deg,var(--hot),#b95f10);padding:34px 0}
+.band .row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.band .cell{display:flex;align-items:center;gap:16px;justify-content:center}
+.band .n{font:600 38px 'Oswald';color:#fff;white-space:nowrap}
+.band .l{font:500 12px 'Golos Text';text-transform:uppercase;letter-spacing:.08em;color:#ffe3c4}
+/* products */
+.projects{padding:76px 0}
+.prj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prj{position:relative;overflow:hidden;border:1px solid var(--line)}
+.prj img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .3s}
+.prj:hover img{transform:scale(1.04)}
+.prj .cap{background:var(--card);padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+.prj .cap .t{font:600 16px 'Oswald';text-transform:uppercase;letter-spacing:.03em}
+.prj .cap .s{font-size:12px;color:var(--muted);margin-top:3px}
+.prj .cap .arr{color:var(--hot);font-size:20px}
+.prj .chip{position:absolute;top:14px;left:14px;background:var(--hot);color:#fff;font:500 11px var(--mono);padding:6px 10px;letter-spacing:.08em}
+/* factory */
+.factory{background:var(--bg2);padding:76px 0}
+.fct{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.fct .photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fct .photos img{width:100%;height:230px;object-fit:cover;display:block;border:1px solid var(--line)}
+.fct h2{font-size:34px;font-weight:600;margin:8px 0 18px}
+.fct p{color:var(--muted)}
+.fct .list{margin-top:22px;display:grid;gap:12px}
+.fct .li{display:flex;gap:12px;align-items:baseline}
+.fct .li::before{content:'—';color:var(--hot);font-weight:600}
+.fct .li b{color:var(--text);font-weight:500}
+/* cta */
+.cta-blk{display:grid;grid-template-columns:1fr 1.1fr}
+.cta-l{background:linear-gradient(135deg,var(--hot),#a85508);padding:64px 48px;display:flex;flex-direction:column;justify-content:center}
+.cta-l .eyebrow{color:#ffe3c4}
+.cta-l h2{font-size:40px;font-weight:600;color:#fff;margin:10px 0 16px}
+.cta-l p{color:#ffe9d2;max-width:380px}
+.cta-r{background:var(--card);padding:56px 48px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form input,.form textarea{background:var(--bg);border:1px solid var(--line);color:var(--text);padding:14px 16px;font:400 15px 'Golos Text';width:100%}
+.form textarea{grid-column:1/-1;min-height:110px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:2px solid var(--hot)}
+.form button{grid-column:1/-1;justify-self:start;border:none;cursor:not-allowed;opacity:.6}
+.form .note{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+/* footer */
+footer{background:#0c0d0f;padding:60px 0 0;border-top:1px solid var(--line)}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px}
+.ft img{height:36px;margin-bottom:16px}
+.ft p,.ft li{font-size:14px;color:var(--muted)}
+.ft h3{font-size:15px;font-weight:600;letter-spacing:.06em;margin-bottom:14px}
+.ft ul{list-style:none;display:grid;gap:8px}
+.ft a{color:var(--muted);text-decoration:none}
+.ft a:hover{color:var(--text)}
+.ft .sq{color:var(--hot);margin-right:8px;font-size:9px;vertical-align:1px}
+.ft-bot{border-top:1px solid var(--line);padding:20px 0;font-size:12.5px;color:#6c7278;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-bot a{color:#9aa1a8;text-decoration:none}
+@media(max-width:1000px){
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .band .row{grid-template-columns:1fr 1fr;gap:26px}
+  .prj-grid{grid-template-columns:1fr}
+  .fct{grid-template-columns:1fr}
+  .cta-blk{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr}.hero .btns{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <img src="img/logo.png" alt="Lizhong Steel Structure">
+  <ul>
+    <li><a href="#">Главная</a></li><li><a href="#svc">Продукция</a></li>
+    <li><a href="#factory">Завод</a></li><li><a href="#about">О компании</a></li>
+    <li><a href="#cta">Контакты</a></li>
+  </ul>
+  <a class="cta" href="#cta">Получить расчёт</a>
+</div></header>
+
+<section class="hero">
+  <div class="bg"></div><div class="shade"></div>
+  <div class="wrap"><div class="inner">
+    <div class="kick eyebrow">Завод в Цзинане · Офис в Ташкенте</div>
+    <h1>Металлоконструкции <span>заводской точности</span></h1>
+    <p>Lizhong Steel Structure проектирует, производит и монтирует стальные каркасы зданий и компоненты. Лазерный раскрой, роботизированная сварка, контроль геометрии каждой детали.</p>
+    <div class="btns">
+      <a class="btn btn-hot" href="#cta">Получить расчёт</a>
+      <a class="btn btn-line" href="#svc">Продукция</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="services" id="svc"><div class="wrap">
+  <div class="sec-head">
+    <div><div class="eyebrow">Что мы делаем</div><h2>Продукция и услуги</h2></div>
+    <a class="more" href="#">Вся продукция</a>
+  </div>
+  <div class="svc-grid">
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M6 42V20L24 8l18 12v22M14 42V26h20v16"/></svg>
+      <div class="t">Заводские здания</div><div class="d">Цеха и производственные корпуса</div></div>
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M4 42h40M8 42V18l16-8 16 8v24M16 42v-12h16v12"/></svg>
+      <div class="t">Склады и ангары</div><div class="d">Большепролётные без опор</div></div>
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M14 6h20M14 42h20M18 6v36M30 6v36M18 16h12M18 32h12"/></svg>
+      <div class="t">Стальные компоненты</div><div class="d">Колонны, балки, фермы</div></div>
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M8 6h32v36H8zM8 18h32M8 30h32M20 6v36M32 6v36"/></svg>
+      <div class="t">Фасадная сталь</div><div class="d">Точные профили для стекла</div></div>
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M10 10h8v28h-8zM10 24h8M30 10h8v28h-8zM30 24h8M18 24h12"/></svg>
+      <div class="t">Прокат</div><div class="d">H-балки, лист, сортамент</div></div>
+    <div class="svc"><svg viewBox="0 0 48 48"><path d="M24 6v8M24 34v8M6 24h8M34 24h8M24 16a8 8 0 1 1 0 16 8 8 0 0 1 0-16z"/></svg>
+      <div class="t">Проект и монтаж</div><div class="d">КМ/КМД и шеф-монтаж</div></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap"><div class="row">
+  <div class="cell"><div class="n">40 000</div><div class="l">м² производственных цехов</div></div>
+  <div class="cell"><div class="n">±0,5 мм</div><div class="l">точность лазерного реза</div></div>
+  <div class="cell"><div class="n">90+</div><div class="l">производственный персонал</div></div>
+  <div class="cell"><div class="n">3 ISO</div><div class="l">9001 · 45001 · 14001</div></div>
+</div></div></section>
+
+<section class="projects" id="about"><div class="wrap">
+  <div class="sec-head">
+    <div><div class="eyebrow">Что мы строим</div><h2>Построено из нашей стали</h2></div>
+    <a class="more" href="#">Все типы зданий</a>
+  </div>
+  <div class="prj-grid">
+    <div class="prj"><span class="chip">БОЛЬШЕПРОЛЁТНЫЕ</span><img src="img/stadium.jpg" alt="Стадион">
+      <div class="cap"><div><div class="t">Стадионы</div><div class="s">фермы любой геометрии</div></div><div class="arr">→</div></div></div>
+    <div class="prj"><span class="chip">ИНФРАСТРУКТУРА</span><img src="img/bridge.jpg" alt="Мост">
+      <div class="cap"><div><div class="t">Мосты</div><div class="s">пролётные строения</div></div><div class="arr">→</div></div></div>
+    <div class="prj"><span class="chip">ПРОМЫШЛЕННОСТЬ</span><img src="img/factory-1.jpg" alt="Завод">
+      <div class="cap"><div><div class="t">Заводские корпуса</div><div class="s">каркас из H-профилей</div></div><div class="arr">→</div></div></div>
+  </div>
+</div></section>
+
+<section class="factory" id="factory"><div class="wrap"><div class="fct">
+  <div>
+    <div class="eyebrow">Производство</div>
+    <h2>Точность делается на заводе</h2>
+    <p>40 000 м² цехов в Цзинане: каждая деталь проходит путь от лазерного раскроя до автоматической окраски с контролем геометрии на каждом переходе.</p>
+    <div class="list">
+      <div class="li"><span><b>Лазерный комплекс 20 кВт</b> — раскрой листа с точностью ±0,5 мм</span></div>
+      <div class="li"><span><b>Сварочные роботы</b> — повторяемое качество шва без человеческого фактора</span></div>
+      <div class="li"><span><b>Дробеструйная установка 2000×2500 мм</b> — подготовка поверхности под окраску</span></div>
+      <div class="li"><span><b>Пресс 500 т</b> и линия точной стали для стеклянных фасадов</span></div>
+    </div>
+  </div>
+  <div class="photos">
+    <img src="img/workshop-5.jpg" alt="Лазерный раскрой">
+    <img src="img/workshop-6.jpg" alt="Цех">
+    <img src="img/workshop-4.jpg" alt="Готовые компоненты">
+    <img src="img/profile-sq.jpg" alt="Точные профили">
+  </div>
+</div></div></section>
+
+<section class="cta-blk" id="cta">
+  <div class="cta-l">
+    <div class="eyebrow">Начнём проект</div>
+    <h2>Готовы посчитать ваш объект?</h2>
+    <p>Пришлите назначение здания, габариты и город строительства — вернёмся с расчётом стоимости и сроков поставки в Узбекистан.</p>
+  </div>
+  <div class="cta-r">
+    <form class="form" onsubmit="return false">
+      <input placeholder="Ваше имя">
+      <input placeholder="Компания">
+      <input placeholder="Email или телефон">
+      <input placeholder="Город объекта">
+      <textarea placeholder="Опишите объект: назначение, габариты, сроки"></textarea>
+      <button class="btn btn-hot" disabled>Отправить запрос</button>
+      <div class="note">Отправка заработает после подключения корпоративной почты и номера.</div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="ft">
+    <div>
+      <img src="img/logo.png" alt="Lizhong Steel Structure">
+      <p>Lizhong Steel Structure (Shandong) Co., Ltd. — проектирование, производство и монтаж стальных конструкций. Завод — Цзинань, Китай. Офис — Ташкент, Узбекистан.</p>
+    </div>
+    <div><h3 class="h">Разделы</h3><ul>
+      <li><a href="#">Главная</a></li><li><a href="#svc">Продукция</a></li>
+      <li><a href="#factory">Завод</a></li><li><a href="#cta">Контакты</a></li>
+    </ul></div>
+    <div><h3 class="h">Продукция</h3><ul>
+      <li><span class="sq">◆</span>Заводские здания</li><li><span class="sq">◆</span>Склады и ангары</li>
+      <li><span class="sq">◆</span>Стальные компоненты</li><li><span class="sq">◆</span>Фасадная сталь</li>
+      <li><span class="sq">◆</span>Горячекатаный прокат</li>
+    </ul></div>
+    <div><h3 class="h">Контакты</h3>
+      <p>Телефон и email появятся после подключения корпоративного номера.</p>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>© Lizhong Steel Structure (Shandong) Co., Ltd.</span>
+    <span>Сайт и продвижение — <a href="https://sales-hub.uz/?utm_source=l-steel.uz&utm_medium=referral&utm_campaign=footer" rel="noopener">Sales HUB</a></span>
+  </div>
+</div></footer>
+</body>
+</html>
