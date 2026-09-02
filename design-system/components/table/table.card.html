@@ -1,0 +1,17 @@
+<!-- @dsCard group="Components" viewport="700x220" name="Table" subtitle="Technical specification table" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:24px"></div>
+<script type="text/babel">
+const { Table } = window.LizhongSteel;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Table
+    columns={['Product', 'Standard', 'Capacity']}
+    rows={[
+      ['H-beam', 'GB/T 11263', '15–30% steel saved vs. I-beam'],
+      ['Box column', 'ISO 9001', 'Custom sections to spec'],
+      ['Curtain wall steel', 'ISO 14001', 'T-shaped / triangular / square profiles'],
+    ]}
+  />
+);
+</script>

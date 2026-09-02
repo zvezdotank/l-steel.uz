@@ -1,0 +1,48 @@
+:root {
+  /* Primary — site blue: header/nav, buttons, active states, footer/toolbar at the dark end */
+  --color-primary-100: #e7f0fa;
+  --color-primary-200: #c3dbf2;
+  --color-primary-300: #8fbbe7;
+  --color-primary-400: #4e93d2;
+  --color-primary-500: #1b5faa;
+  --color-primary-600: #154b87;
+  --color-primary-700: #103a69;
+  --color-primary-800: #0b2a4d;
+  --color-primary-900: #0a1930;
+
+  /* Accent — orange, used sparingly (one product-category highlight on the real site) */
+  --color-accent-100: #fceee0;
+  --color-accent-200: #f8d3ac;
+  --color-accent-300: #f2ad6c;
+  --color-accent-400: #eb8b37;
+  --color-accent-500: #e07a1e;
+  --color-accent-600: #b8620f;
+  --color-accent-700: #8f4b0c;
+  --color-accent-800: #663509;
+  --color-accent-900: #402106;
+
+  /* Neutral — steel gray */
+  --color-neutral-100: #f5f6f7;
+  --color-neutral-200: #e6e8ea;
+  --color-neutral-300: #cfd3d7;
+  --color-neutral-400: #a9afb6;
+  --color-neutral-500: #7c848c;
+  --color-neutral-600: #5c636b;
+  --color-neutral-700: #454b51;
+  --color-neutral-800: #2e3236;
+  --color-neutral-900: #1a1c1e;
+
+  /* Semantic aliases */
+  --color-bg: #ffffff;
+  --color-bg-alt: var(--color-neutral-100);
+  --color-surface: #ffffff;
+  --color-border: var(--color-neutral-300);
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-on-primary: #ffffff;
+  --color-text-on-accent: #ffffff;
+  --color-link: var(--color-primary-600);
+  --color-link-hover: var(--color-primary-700);
+  --color-success: #2f7a4a;
+  --color-danger: #b3261e;
+}

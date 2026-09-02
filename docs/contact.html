@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — Lizhong Steel Structure</title>
+<meta name="description" content="Получите расчёт стоимости стальных конструкций: параметры объекта, форма запроса.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/styles.css?v=1788339159">
+<link rel="stylesheet" href="assets/site.css?v=1788339159">
+</head>
+<body class="">
+<header class="site-header">
+  <nav class="nav container">
+    <a class="nav-logo" href="index.html"><img src="assets/img/logo-alt.png" alt="Lizhong Steel Structure"></a>
+    <ul class="nav-links"><li><a href="index.html">Главная</a></li><li><a href="about.html">О компании</a></li><li><a href="products.html">Продукция</a></li><li><a href="contact.html" class="active">Контакты</a></li></ul>
+    <a class="btn btn-primary nav-cta" href="contact.html">Получить расчёт</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="this.closest('.nav').classList.toggle('menu-open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="container"><div class="breadcrumbs"><a href="index.html">Главная</a> › Контакты</div></div>
+<section class="section" style="padding-top:var(--space-6)"><div class="container">
+  <div class="split">
+    <div class="prose">
+      <div class="card-eyebrow">Контакты</div>
+      <h1 style="font:var(--text-h1)">Получить расчёт</h1>
+      <p>Пришлите параметры объекта: назначение здания, габариты, город строительства.
+      Ответим с расчётом стоимости производства и поставки в Узбекистан.</p>
+      <p style="color:var(--color-text-muted)">Корпоративный телефон и email сейчас подключаются — контакты появятся здесь в ближайшее время.</p>
+      <p style="font:var(--text-body-sm)">Завод: Цзинань, район Лайу, провинция Шаньдун, Китай.</p>
+    </div>
+    <div>
+      <form class="form" onsubmit="return typeof sendInquiry==='function' ? sendInquiry(this) : false">
+        <div class="field"><label for="f-company">Компания</label>
+          <input class="input" id="f-company" name="company" placeholder="Название компании"></div>
+        <div class="field"><label for="f-contact">Email или телефон</label>
+          <input class="input" id="f-contact" name="contact" required placeholder="Как с вами связаться"></div>
+        <div class="field"><label for="f-msg">Сообщение</label>
+          <textarea class="textarea" id="f-msg" name="message" required placeholder="Опишите объект: назначение, габариты, сроки"></textarea></div>
+        <button class="btn btn-accent btn-block" type="submit" disabled>Отправить запрос</button>
+        <p style="font:var(--text-caption);color:var(--color-text-muted)">Отправка заработает после подключения корпоративной почты.</p>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="assets/img/logo.png" alt="Lizhong Steel Structure"></div>
+        <p>Lizhong Steel Structure (Shandong) Co., Ltd. — проектирование, производство и монтаж стальных конструкций. Цзинань, провинция Шаньдун, Китай. Поставки в Узбекистан и страны Центральной Азии.</p>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <p style="color:var(--color-neutral-500)">Телефон и email появятся здесь после подключения корпоративного номера.</p>
+      </div>
+      <div>
+        <h3>Продукция</h3>
+        <ul class="footer-list">
+          <li>Обычные стальные здания</li>
+          <li>Общественные стальные здания</li>
+          <li>Стальные компоненты</li>
+          <li>Сталь для стеклянных фасадов</li>
+          <li>Горячекатаный прокат</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© Lizhong Steel Structure (Shandong) Co., Ltd.</div>
+  </div>
+</footer>
+</body>
+</html>

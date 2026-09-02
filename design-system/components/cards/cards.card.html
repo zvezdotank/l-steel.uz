@@ -1,0 +1,13 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Cards" subtitle="Product / news card, flat and elevated" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--color-bg-alt)"></div>
+<script type="text/babel">
+const { Card } = window.LizhongSteel;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
+    <Card eyebrow="Product" title="Steel Structure Warehouse" body="Light steel frame system built from H-, Z- and U-shaped components." />
+    <Card elevated eyebrow="Company News" title="New 20,000W Laser Blanking Line" body="Processing capacity expanded across the Jinan Laiwu production base." />
+  </>
+);
+</script>

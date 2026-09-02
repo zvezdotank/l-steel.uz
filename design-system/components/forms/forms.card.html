@@ -1,0 +1,14 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Form fields" subtitle="Inquiry / quote request inputs" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:24px;display:flex;flex-direction:column;gap:14px;max-width:420px"></div>
+<script type="text/babel">
+const { Input } = window.LizhongSteel;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
+    <Input label="Company" placeholder="Your company name" />
+    <Input label="Email" type="email" placeholder="you@company.com" />
+    <Input label="Message" textarea placeholder="Tell us about your project" />
+  </>
+);
+</script>

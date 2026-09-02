@@ -1,0 +1,15 @@
+<!-- @dsCard group="Components" viewport="700x140" name="Tags" subtitle="Category and certification labels" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:24px;display:flex;gap:10px;flex-wrap:wrap"></div>
+<script type="text/babel">
+const { Tag } = window.LizhongSteel;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
+    <Tag variant="primary">Conventional Steel Structure</Tag>
+    <Tag variant="accent">Public Steel Structure</Tag>
+    <Tag variant="neutral">Steel Components</Tag>
+    <Tag variant="outline">ISO 9001</Tag>
+  </>
+);
+</script>

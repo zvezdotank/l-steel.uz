@@ -1,0 +1,30 @@
+<!-- @dsCard group="Website" viewport="1200x640" name="Lizhong Steel Structure — Website" -->
+<!-- @startingPoint section="Website" subtitle="Marketing site: home, about, products, contact" viewport="1200x640" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="./Home.jsx"></script>
+<script type="text/babel" src="./About.jsx"></script>
+<script type="text/babel" src="./Products.jsx"></script>
+<script type="text/babel" src="./Contact.jsx"></script>
+<div id="root"></div>
+<script type="text/babel">
+const { Navbar, Footer } = window.LizhongSteel;
+function App() {
+  const [page, setPage] = React.useState('HOME');
+  const pages = { 'HOME': window.Home, 'ABOUT US': window.About, 'PRODUCT': window.Products, 'CONTACT': window.Contact };
+  const Page = pages[page] || window.Home;
+  return (
+    <div>
+      <div onClickCapture={(e) => {
+        const a = e.target.closest('a');
+        if (a && a.textContent) { e.preventDefault(); setPage(a.textContent); }
+      }}>
+        <Navbar active={page} />
+      </div>
+      <Page />
+      <Footer />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>

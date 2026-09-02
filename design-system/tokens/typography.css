@@ -1,0 +1,23 @@
+/* No webfont files were retrievable from the source site — the real site
+   sets a plain system-style sans throughout (heading and body alike, no
+   condensed/display face). Substituted with Inter as the closest match. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Inter', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --text-display: 700 clamp(2.25rem, 3vw + 1rem, 4rem)/1.1 var(--font-heading);
+  --text-h1: 700 2.25rem/1.2 var(--font-heading);
+  --text-h2: 700 1.75rem/1.25 var(--font-heading);
+  --text-h3: 600 1.375rem/1.3 var(--font-heading);
+  --text-h4: 600 1.0625rem/1.35 var(--font-heading);
+  --text-eyebrow: 700 0.8125rem/1.4 var(--font-heading);
+  --text-body-lg: 400 1.125rem/1.6 var(--font-body);
+  --text-body: 400 1rem/1.6 var(--font-body);
+  --text-body-sm: 400 0.875rem/1.5 var(--font-body);
+  --text-caption: 500 0.75rem/1.4 var(--font-body);
+
+  --letter-spacing-eyebrow: 0.04em;
+  --letter-spacing-heading: 0;
+}
