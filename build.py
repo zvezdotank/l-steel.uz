@@ -149,7 +149,9 @@ def page_shell(slug: str, title: str, description: str, body: str, extra_body_cl
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© Lizhong Steel Structure (Shandong) Co., Ltd.</div>
+    <div class="footer-bottom">© Lizhong Steel Structure (Shandong) Co., Ltd.
+      <span style="display:block;margin-top:var(--space-2)">Сайт и продвижение — <a href="https://sales-hub.uz/?utm_source={DOMAIN}&utm_medium=referral&utm_campaign=footer" rel="noopener">Sales HUB</a></span>
+    </div>
   </div>
 </footer>
 </body>
