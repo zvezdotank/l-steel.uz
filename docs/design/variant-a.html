@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант A — Тёмная сталь</title>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101317; --bg2:#171b21; --line:#2a3038; --text:#eef1f4; --muted:#98a1ab;
+  --steel:#4e93d2; --hot:#e07a1e; --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 'Golos Text',sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.nav img{height:38px;filter:none}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--muted)}
+.nav ul li:first-child{color:var(--text)}
+.nav .cta{border:1px solid var(--steel);color:var(--steel);padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none}
+.hero{position:relative;padding:88px 0 64px;overflow:hidden}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;opacity:.25}
+.cols{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{font:500 13px/1 var(--mono);color:var(--hot);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.kicker::before{content:'';width:34px;height:1px;background:var(--hot)}
+h1{font:800 clamp(38px,4.6vw,64px)/1.08 'Golos Text';margin:20px 0 22px;letter-spacing:-.01em}
+h1 .steel{color:var(--steel)}
+.sub{color:var(--muted);max-width:520px;font-size:18px}
+.geo{margin-top:18px;font:400 13px var(--mono);color:var(--muted)}
+.geo b{color:var(--text);font-weight:500}
+.actions{display:flex;gap:14px;margin-top:34px}
+.btn{padding:15px 28px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-hot{background:var(--hot);color:#fff}
+.btn-line{border:1px solid var(--line);color:var(--text)}
+.photo{position:relative}
+.photo img{width:100%;display:block;clip-path:polygon(0 0,100% 0,100% calc(100% - 48px),calc(100% - 48px) 100%,0 100%)}
+.dim{position:absolute;left:-8px;right:-8px;bottom:-34px;display:flex;justify-content:space-between;font:400 12px var(--mono);color:var(--muted)}
+.dim::before{content:'';position:absolute;left:0;right:0;top:-8px;border-top:1px solid var(--line)}
+.tol{position:absolute;top:18px;right:18px;background:#101317e0;border:1px solid var(--line);padding:10px 14px;font:500 13px var(--mono);color:var(--text)}
+.tol b{color:var(--hot);font-weight:500}
+.facts{border-top:1px solid var(--line);margin-top:70px}
+.facts .row{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:26px 24px;border-right:1px solid var(--line)}
+.fact:first-child{padding-left:0}
+.fact:last-child{border-right:none}
+.fact .n{font:500 30px var(--mono);color:var(--text)}
+.fact .n span{color:var(--steel)}
+.fact .l{font-size:13px;color:var(--muted);margin-top:6px}
+@media(max-width:900px){.cols{grid-template-columns:1fr}.facts .row{grid-template-columns:1fr 1fr}.fact{padding-left:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <img src="img/logo.png" alt="Lizhong">
+  <ul><li>Главная</li><li>О компании</li><li>Продукция</li><li>Контакты</li></ul>
+  <a class="cta" href="#">Получить расчёт</a>
+</div></header>
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="wrap cols">
+    <div>
+      <div class="kicker">Точность стальных конструкций</div>
+      <h1>Металл, сваренный <span class="steel">с точностью</span> до миллиметра</h1>
+      <p class="sub">Коробчатые колонны, балки и каркасы зданий с завода Lizhong: лазерный раскрой 20 кВт, сварочные роботы, контроль геометрии на каждом этапе.</p>
+      <div class="geo">Завод — Цзинань, Китай · Офис — <b>Ташкент, Узбекистан</b></div>
+      <div class="actions">
+        <a class="btn btn-hot" href="#">Получить расчёт</a>
+        <a class="btn btn-line" href="#">Продукция</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="img/workshop-5.jpg" alt="Лазерный раскрой">
+      <div class="tol">допуск реза <b>±0,5 мм</b></div>
+      <div class="dim"><span>|&larr;</span><span>лазерный комплекс 20 000 Вт</span><span>&rarr;|</span></div>
+    </div>
+  </div>
+  <div class="wrap facts"><div class="row">
+    <div class="fact"><div class="n">40 000 <span>м²</span></div><div class="l">производственных цехов</div></div>
+    <div class="fact"><div class="n">±0,5 <span>мм</span></div><div class="l">точность лазерного реза</div></div>
+    <div class="fact"><div class="n">500 <span>т</span></div><div class="l">прессовое оборудование</div></div>
+    <div class="fact"><div class="n">ISO <span>×3</span></div><div class="l">9001 · 45001 · 14001</div></div>
+  </div></div>
+</section>
+</body>
+</html>

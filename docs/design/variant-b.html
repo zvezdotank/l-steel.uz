@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант B — Светлый металл</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;750&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eceef0; --panel:#f7f8f9; --ink:#14181c; --muted:#5c646c; --line:#c9ced3;
+  --steel:#1b5faa; --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{background:linear-gradient(180deg,#e8eaec,#f2f3f5 320px);color:var(--ink);font:400 16px/1.6 'Inter Tight',sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+header{background:transparent}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}
+.nav img{height:40px}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--muted)}
+.nav ul li:first-child{color:var(--ink);font-weight:600}
+.nav .cta{background:var(--steel);color:#fff;padding:11px 22px;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px}
+.hero{padding:72px 0 0}
+.tag{display:inline-flex;align-items:center;gap:10px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--steel);border:1px solid var(--steel);padding:8px 14px;border-radius:2px;background:#fff}
+h1{font:750 clamp(40px,5.4vw,76px)/1.04 'Inter Tight';letter-spacing:-.025em;margin:26px 0 20px;max-width:900px}
+h1 em{font-style:normal;color:var(--steel)}
+.sub{font-size:19px;color:var(--muted);max-width:640px}
+.meta{display:flex;gap:36px;margin:30px 0 40px;font:400 13px var(--mono);color:var(--muted)}
+.meta b{display:block;color:var(--ink);font-weight:500;font-size:14px;margin-bottom:2px}
+.btnrow{display:flex;gap:14px;margin-bottom:56px}
+.btn{padding:16px 30px;font-weight:600;font-size:15px;text-decoration:none;border-radius:2px}
+.btn-main{background:var(--steel);color:#fff}
+.btn-ghost{color:var(--ink);border:1px solid var(--line);background:#fff}
+.strip{position:relative}
+.strip img{width:100%;height:440px;object-fit:cover;display:block;border-radius:3px 3px 0 0}
+.plate{position:absolute;left:32px;bottom:32px;right:32px;display:flex;gap:1px;background:#ffffffd9;backdrop-filter:none;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.plate>div{flex:1;background:#fff;padding:18px 22px}
+.plate .n{font:500 24px var(--mono);color:var(--ink)}
+.plate .l{font-size:12.5px;color:var(--muted);margin-top:3px}
+.plate>div:nth-child(2) .n{color:var(--steel)}
+@media(max-width:900px){.plate{position:static;flex-direction:column;border-top:none}.strip img{height:300px;border-radius:0}.meta{flex-wrap:wrap;gap:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <img src="img/logo-alt.png" alt="Lizhong">
+  <ul><li>Главная</li><li>О компании</li><li>Продукция</li><li>Контакты</li></ul>
+  <a class="cta" href="#">Получить расчёт</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="tag">Сталь · Точность · Качество</span>
+  <h1>Стальные конструкции<br>заводского качества — <em>с контролем каждого шва</em></h1>
+  <p class="sub">Lizhong Steel Structure проектирует, производит и монтирует здания и компоненты из стали. Современный завод в Цзинане, офис и поставки — в Узбекистане.</p>
+  <div class="meta">
+    <div><b>Завод</b>Цзинань, Китай</div>
+    <div><b>Офис</b>Ташкент, Узбекистан</div>
+    <div><b>Сертификация</b>ISO 9001 / 45001 / 14001</div>
+  </div>
+  <div class="btnrow">
+    <a class="btn btn-main" href="#">Получить расчёт</a>
+    <a class="btn btn-ghost" href="#">Смотреть продукцию</a>
+  </div>
+  <div class="strip">
+    <img src="img/workshop-6.jpg" alt="Цех Lizhong">
+    <div class="plate">
+      <div><div class="n">40 000 м²</div><div class="l">производственных площадей</div></div>
+      <div><div class="n">±0,5 мм</div><div class="l">точность лазерного раскроя</div></div>
+      <div><div class="n">2 линии</div><div class="l">конструкции и точная сталь фасадов</div></div>
+      <div><div class="n">90+</div><div class="l">производственный персонал</div></div>
+    </div>
+  </div>
+</div></section>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант D — Чертёж</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfcfd; --ink:#10151b; --blue:#1b5faa; --blue-soft:#dbe7f3; --line:#c5d5e6;
+  --muted:#5b6773; --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{
+  background:var(--paper);color:var(--ink);font:400 16px/1.6 'IBM Plex Sans',sans-serif;
+  background-image:linear-gradient(var(--blue-soft) 1px,transparent 1px),linear-gradient(90deg,var(--blue-soft) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.frame{max-width:1240px;margin:22px auto;border:2px solid var(--ink);background:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:2px solid var(--ink)}
+.nav img{height:38px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--muted)}
+.nav ul li:first-child{color:var(--blue);font-weight:600}
+.nav .cta{background:var(--blue);color:#fff;padding:11px 20px;font-size:14px;font-weight:600;text-decoration:none}
+.sheet{display:grid;grid-template-columns:1.05fr .95fr}
+.left{padding:60px 44px 48px;border-right:2px solid var(--ink);position:relative}
+.stamp{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border:1px solid var(--blue);display:inline-block;padding:7px 12px}
+h1{font:700 clamp(34px,3.8vw,56px)/1.1 'IBM Plex Sans';letter-spacing:-.015em;margin:22px 0 18px}
+h1 u{text-decoration:none;border-bottom:4px solid var(--blue)}
+.sub{color:var(--muted);font-size:17.5px;max-width:480px}
+.spec{margin:30px 0 0;border-top:1px solid var(--line);width:100%}
+.spec div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.spec span:first-child{color:var(--muted)}
+.spec span:last-child{font:500 14px var(--mono)}
+.btnrow{display:flex;gap:12px;margin-top:32px}
+.btn{padding:15px 26px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-b{background:var(--blue);color:#fff}
+.btn-o{border:2px solid var(--ink);color:var(--ink)}
+.right{position:relative;min-height:560px}
+.right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.callout{position:absolute;background:#fff;border:1px solid var(--ink);padding:9px 13px;font:400 12.5px var(--mono)}
+.callout::before{content:'';position:absolute;width:38px;border-top:1px solid var(--ink)}
+.c1{top:56px;left:-19px}
+.c2{bottom:120px;right:26px}
+.c2::before{right:100%;top:50%}
+.c1::before{left:100%;top:50%}
+.title-block{position:absolute;right:0;bottom:0;background:#fff;border-left:2px solid var(--ink);border-top:2px solid var(--ink);font:400 11.5px var(--mono);color:var(--muted)}
+.title-block table{border-collapse:collapse}
+.title-block td{border:1px solid var(--line);padding:6px 12px}
+.title-block b{color:var(--ink);font-weight:500}
+@media(max-width:900px){.sheet{grid-template-columns:1fr}.left{border-right:none;border-bottom:2px solid var(--ink)}.right{min-height:380px}}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="nav">
+    <img src="img/logo-alt.png" alt="Lizhong">
+    <ul><li>Главная</li><li>О компании</li><li>Продукция</li><li>Контакты</li></ul>
+    <a class="cta" href="#">Получить расчёт</a>
+  </div>
+  <div class="sheet">
+    <div class="left">
+      <span class="stamp">Чертёж № L-STEEL.UZ · лист 1</span>
+      <h1>Стальные конструкции, выполненные <u>по чертежу</u> — без допусков «на глаз»</h1>
+      <p class="sub">Завод Lizhong в Цзинане производит колонны, балки и каркасы зданий с инженерным контролем геометрии. Офис в Ташкенте сопровождает проект до монтажа.</p>
+      <div class="spec">
+        <div><span>Точность лазерного реза</span><span>±0,5 мм</span></div>
+        <div><span>Производственные площади</span><span>40 000 м²</span></div>
+        <div><span>Прессовое оборудование</span><span>500 т</span></div>
+        <div><span>Система качества</span><span>ISO 9001 / 45001 / 14001</span></div>
+      </div>
+      <div class="btnrow">
+        <a class="btn btn-b" href="#">Получить расчёт</a>
+        <a class="btn btn-o" href="#">Продукция</a>
+      </div>
+    </div>
+    <div class="right">
+      <img src="img/factory-1.jpg" alt="Каркас здания">
+      <div class="callout c1">каркас: сварной H-профиль</div>
+      <div class="callout c2">узлы — болтовые соединения</div>
+      <div class="title-block"><table>
+        <tr><td>Разработал</td><td><b>Lizhong Steel Structure</b></td></tr>
+        <tr><td>Завод</td><td><b>Цзинань, КНР</b></td></tr>
+        <tr><td>Офис</td><td><b>Ташкент, Узбекистан</b></td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
