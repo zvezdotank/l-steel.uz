@@ -148,6 +148,7 @@ footer{background:#111214;padding:64px 0 0}
 
 <section class="hero tex">
   <div class="bg"></div><div class="shade"></div>
+  <canvas id="weld" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
   <div class="wrap"><div class="inner">
     <div class="kick">Металлоконструкции. Надёжно и точно.</div>
     <h1>Мы строим <span>из стали</span></h1>
@@ -276,5 +277,72 @@ footer{background:#111214;padding:64px 0 0}
     <span>Сайт и продвижение — <a href="https://sales-hub.uz/?utm_source=l-steel.uz&utm_medium=referral&utm_campaign=footer" rel="noopener">Sales HUB</a></span>
   </div>
 </div></footer>
+<script>
+// Эффект сварки в хиро: периодическая дуга + разлетающиеся искры.
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cv = document.getElementById('weld');
+  const hero = cv.parentElement;
+  const ctx = cv.getContext('2d');
+  let W, H, PX, PY;
+  function size(){
+    W = cv.width = hero.clientWidth;
+    H = cv.height = hero.clientHeight;
+    PX = W * 0.68; PY = H * 0.40;           // точка сварки на конструкции
+  }
+  size(); addEventListener('resize', size);
+
+  const parts = [];
+  let burstUntil = 0, nextBurst = performance.now() + 900;
+
+  function spawn(n){
+    for(let i=0;i<n;i++){
+      const a = Math.random()*Math.PI - Math.PI*0.15;      // веер вниз и в стороны
+      const v = 1.5 + Math.random()*4.5;
+      parts.push({
+        x:PX, y:PY,
+        vx:Math.cos(a)*v*(Math.random()<.5?-1:1),
+        vy:Math.sin(a)*v*0.6 - Math.random()*1.2,
+        life:30+Math.random()*50, age:0
+      });
+    }
+  }
+
+  function tick(now){
+    if (now > nextBurst){ burstUntil = now + 700 + Math.random()*1100; nextBurst = now + 1600 + Math.random()*2000; }
+    const active = now < burstUntil;
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation = 'lighter';
+
+    if (active){
+      spawn(5 + (Math.random()*5|0));
+      // дуга: мерцающая вспышка
+      const f = 0.6 + Math.random()*0.4;
+      const r = 60*f;
+      const g = ctx.createRadialGradient(PX,PY,0,PX,PY,r);
+      g.addColorStop(0,'rgba(255,255,255,'+(0.85*f)+')');
+      g.addColorStop(0.18,'rgba(255,220,160,'+(0.5*f)+')');
+      g.addColorStop(0.5,'rgba(238,123,28,'+(0.16*f)+')');
+      g.addColorStop(1,'rgba(238,123,28,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(PX,PY,r,0,7); ctx.fill();
+    }
+
+    for(let i=parts.length-1;i>=0;i--){
+      const p = parts[i];
+      const ox = p.x, oy = p.y;
+      p.vy += 0.11; p.vx *= 0.985;
+      p.x += p.vx; p.y += p.vy; p.age++;
+      const k = 1 - p.age/p.life;
+      if (k <= 0){ parts.splice(i,1); continue; }
+      ctx.strokeStyle = k > 0.6 ? 'rgba(255,240,210,'+k+')' : 'rgba(238,140,40,'+k+')';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.moveTo(ox,oy); ctx.lineTo(p.x,p.y); ctx.stroke();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
 </body>
 </html>
