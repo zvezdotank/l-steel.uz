@@ -23,9 +23,9 @@ EMAIL = ""
 PHONE = ""
 WA = ""  # например https://api.whatsapp.com/send?phone=...
 
-# Купленный домен (без https://) — вписать, когда Игорь пришлёт.
-# Пишется в docs/CNAME, GitHub Pages подхватывает его автоматически.
-DOMAIN = ""
+# Купленный домен (без https://). Пишется в docs/CNAME,
+# GitHub Pages подхватывает его автоматически.
+DOMAIN = "l-steels.uz"
 
 CHEVRON = ('<svg class="chevron" width="20" height="12" viewBox="0 0 20 12" fill="none" '
            'stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2l8 8 8-8"/></svg>')
