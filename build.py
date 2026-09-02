@@ -23,10 +23,10 @@ EMAIL = ""
 PHONE = ""
 WA = ""  # например https://api.whatsapp.com/send?phone=...
 
-# Купленный домен: l-steel.uz. Вписать сюда, ТОЛЬКО когда у домена
-# настроен DNS (A-записи на IP GitHub Pages) — до этого CNAME в репозитории
-# уводит рабочий github.io-адрес на пустой домен.
-DOMAIN = ""
+# Купленный домен. DNS настроен в Billur 2 сентября 2026 (4 A-записи апекса
+# на IP GitHub Pages + CNAME www). CNAME-файл в docs/ задаёт custom domain
+# в GitHub Pages автоматически.
+DOMAIN = "l-steel.uz"
 
 CHEVRON = ('<svg class="chevron" width="20" height="12" viewBox="0 0 20 12" fill="none" '
            'stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2l8 8 8-8"/></svg>')
