@@ -280,7 +280,8 @@ footer{background:#111214;padding:64px 0 0}
 <script>
 // Эффект сварки в хиро: периодическая дуга + разлетающиеся искры.
 (function(){
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const WELD_ON = false; // эффект одобрен, включим на подходящей картинке (горелка/стык)
+  if (!WELD_ON || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const cv = document.getElementById('weld');
   const hero = cv.parentElement;
   const ctx = cv.getContext('2d');
